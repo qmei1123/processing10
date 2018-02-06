@@ -1,15 +1,18 @@
-let bubble1, bubble2, bubble3;
+let bubble;
+var x = 1;
+var speed = 2;
 function setup() {
     createCanvas(800, 800);
-    background(50, 50, 200);
+    background(255);
     bubble = new Bubble();
+    frameRate(3);
 }
 
 function draw() { 
-    bubble1 = new Bubble();
-    bubble2 = new Bubble();
-    bubble3 = new Bubble();
+    bubble = new Bubble();
 
+    bubble.show();
+    x = x + speed;
 }
 
 class Bubble {
@@ -17,14 +20,14 @@ class Bubble {
         this.x = 100;
         this.y = 100;
     }
-    move() {
-        this.x = this.x + random(-5, 5);
-        this.y = this.y + random(-5, 5);
-    }
     show() {
-        stroke(255);
-        strokeWeight(10);
         noFill();
-        ellipse(this.x, this.y, 100, 100);
+        stroke(255, 220, 0, 15);
+        strokeWeight(x);
+        for (this.x = 0; this.x < width; this.x += 100) {
+            for (this.y = 0; this.y < width; this.y += 100) {
+                ellipse(this.x, this.y, 100, 100);
+            }
+        }
     }
 }
