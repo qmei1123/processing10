@@ -2,7 +2,7 @@ let bubble;
 var x = 1;
 var speed = 2;
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(window.innerWidth, window.innerHeight);
     background(255);
     bubble = new Bubble();
     frameRate(3);
